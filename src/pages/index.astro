@@ -101,6 +101,25 @@ const highlights = [
 			</nav>
 		</header>
 
+		<div class="social-rail" aria-label="Redes sociais da Prática">
+			<a class="rail-icon" href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+				<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.335-1.652a11.882 11.882 0 005.71 1.454h.006c6.585 0 11.946-5.359 11.949-11.893a11.821 11.821 0 00-3.479-8.417z"/>
+				</svg>
+			</a>
+			<a class="rail-icon" href={instagramHref} target="_blank" rel="noopener noreferrer" aria-label={`Instagram ${instagramHandle}`}>
+				<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0m0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324M12 16a4 4 0 110-8 4 4 0 010 8m6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881"/>
+				</svg>
+			</a>
+			<a class="rail-icon" href={`mailto:${contactEmail}`} aria-label={`E-mail ${contactEmail}`}>
+				<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+					<path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+				</svg>
+			</a>
+		</div>
+
 		<main>
 			<section class="hero" id="inicio">
 				<div class="container hero-grid">
@@ -233,27 +252,68 @@ const highlights = [
 		</main>
 
 		<footer class="site-footer">
-			<div class="container footer-inner">
+			<div class="container footer-top">
 				<div class="footer-brand">
 					<img src="/logo-pratica-header.png" alt={companyName} class="footer-logo" />
+					<p class="footer-tagline">
+						Contábil, consultiva e financeira desde 2018.
+					</p>
 				</div>
-				<div class="footer-social">
-					<a class="social-icon" href={whatsappHref} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-						<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-							<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.335-1.652a11.882 11.882 0 005.71 1.454h.006c6.585 0 11.946-5.359 11.949-11.893a11.821 11.821 0 00-3.479-8.417z"/>
-						</svg>
-					</a>
-					<a class="social-icon" href={instagramHref} target="_blank" rel="noopener noreferrer" aria-label={`Instagram ${instagramHandle}`}>
-						<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0m0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324M12 16a4 4 0 110-8 4 4 0 010 8m6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881"/>
-						</svg>
-					</a>
-					<a class="social-icon" href={`mailto:${contactEmail}`} aria-label={`E-mail ${contactEmail}`}>
-						<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-							<path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
-							<path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
-						</svg>
-					</a>
+
+				<div class="footer-col">
+					<h3 class="footer-heading">Navegação</h3>
+					<ul class="footer-links">
+						<li><a href="#inicio">Início</a></li>
+						<li><a href="#quem-somos">Quem Somos</a></li>
+						<li><a href="#servicos">Serviços</a></li>
+						<li><a href="#fale-conosco">Fale Conosco</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h3 class="footer-heading">Serviços</h3>
+					<ul class="footer-links">
+						{services.map((service) => (
+							<li>{service.title}</li>
+						))}
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h3 class="footer-heading">Contato</h3>
+					<ul class="footer-contact">
+						<li>
+							<a href={`mailto:${contactEmail}`}>
+								<span class="contact-ic" aria-hidden="true">
+									<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+										<path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+									</svg>
+								</span>
+								<span>{contactEmail}</span>
+							</a>
+						</li>
+						<li>
+							<a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+								<span class="contact-ic" aria-hidden="true">
+									<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.359.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.335-1.652a11.882 11.882 0 005.71 1.454h.006c6.585 0 11.946-5.359 11.949-11.893a11.821 11.821 0 00-3.479-8.417z"/>
+									</svg>
+								</span>
+								<span>(85) 99680-2744</span>
+							</a>
+						</li>
+						<li>
+							<a href={instagramHref} target="_blank" rel="noopener noreferrer">
+								<span class="contact-ic" aria-hidden="true">
+									<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0m0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324M12 16a4 4 0 110-8 4 4 0 010 8m6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881"/>
+									</svg>
+								</span>
+								<span>{instagramHandle}</span>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 			<div class="container">
@@ -990,65 +1050,147 @@ const highlights = [
 		box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 	}
 
-	/* Footer */
-	.site-footer {
-		background: var(--color-ink);
-		color: #fff;
-		padding: 2rem 0 1.25rem;
-	}
-
-	.footer-inner {
+	/* Barra social flutuante (lateral direita) */
+	.social-rail {
+		position: fixed;
+		top: 50%;
+		right: 18px;
+		transform: translateY(-50%);
+		z-index: 40;
 		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: space-between;
-		gap: 1.5rem;
-		padding-bottom: 1.75rem;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-		margin-bottom: 1.25rem;
+		flex-direction: column;
+		gap: 0.65rem;
 	}
 
-	.footer-logo {
-		height: 62px;
-		width: auto;
-		display: block;
-		filter: brightness(0) invert(1);
-		opacity: 0.95;
-	}
-
-	.footer-social {
-		display: flex;
-		gap: 0.75rem;
-		align-items: center;
-	}
-
-	.social-icon {
-		width: 44px;
-		height: 44px;
+	.rail-icon {
+		width: 46px;
+		height: 46px;
 		border-radius: 50%;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		background: rgba(255, 255, 255, 0.08);
-		color: rgba(255, 255, 255, 0.85);
-		transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-	}
-
-	.social-icon:hover {
-		background: var(--color-accent);
+		background: var(--color-gradient);
 		color: #fff;
-		transform: translateY(-2px);
+		box-shadow: 0 8px 20px rgba(15, 42, 51, 0.22);
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
 	}
 
-	.social-icon svg {
-		width: 20px;
-		height: 20px;
+	.rail-icon:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 12px 26px rgba(15, 42, 51, 0.32);
+	}
+
+	.rail-icon svg {
+		width: 21px;
+		height: 21px;
+		display: block;
+	}
+
+	/* Footer */
+	.site-footer {
+		background: var(--color-ink);
+		color: #fff;
+		padding: 2.5rem 0 1.1rem;
+	}
+
+	.footer-top {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1.4fr 1.5fr;
+		gap: 1.75rem 2.5rem;
+		align-items: start;
+		padding-bottom: 1.6rem;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+		margin-bottom: 1rem;
+	}
+
+	.footer-logo {
+		height: 44px;
+		width: auto;
+		display: block;
+		filter: brightness(0) invert(1);
+		opacity: 0.95;
+		margin-bottom: 0.85rem;
+	}
+
+	.footer-tagline {
+		color: rgba(255, 255, 255, 0.6);
+		font-size: 0.85rem;
+		line-height: 1.55;
+		margin: 0;
+		max-width: 22rem;
+	}
+
+	.footer-heading {
+		font-family: var(--font-display);
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--color-accent);
+		margin: 0 0 0.8rem;
+	}
+
+	.footer-links,
+	.footer-contact {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.footer-links li {
+		color: rgba(255, 255, 255, 0.72);
+		font-size: 0.85rem;
+		line-height: 1.3;
+	}
+
+	.footer-links a {
+		color: rgba(255, 255, 255, 0.72);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.footer-links a:hover {
+		color: #fff;
+	}
+
+	.footer-contact a {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		color: rgba(255, 255, 255, 0.8);
+		text-decoration: none;
+		font-size: 0.85rem;
+		transition: color 0.2s ease;
+	}
+
+	.footer-contact a:hover {
+		color: #fff;
+	}
+
+	.contact-ic {
+		flex-shrink: 0;
+		width: 30px;
+		height: 30px;
+		border-radius: 9px;
+		background: rgba(47, 166, 149, 0.15);
+		color: var(--color-accent);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.contact-ic svg {
+		width: 15px;
+		height: 15px;
 		display: block;
 	}
 
 	.footer-copy {
 		color: rgba(255, 255, 255, 0.55);
-		font-size: 0.8rem;
+		font-size: 0.78rem;
 		margin: 0;
 	}
 
@@ -1091,6 +1233,37 @@ const highlights = [
 		.sobre-frame {
 			max-width: 420px;
 			margin: 0 auto;
+		}
+
+		.footer-top {
+			grid-template-columns: 1fr 1fr;
+			gap: 2rem 2.5rem;
+		}
+
+		.footer-brand {
+			grid-column: 1 / -1;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.footer-top {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.social-rail {
+			right: 10px;
+			gap: 0.5rem;
+		}
+
+		.rail-icon {
+			width: 40px;
+			height: 40px;
+		}
+
+		.rail-icon svg {
+			width: 18px;
+			height: 18px;
 		}
 	}
 </style>
