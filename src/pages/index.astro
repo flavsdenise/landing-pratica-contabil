@@ -4,17 +4,43 @@ const whatsappMessage = "Vim pelo Instagram e quero saber mais informações dos
 const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 const instagramHandle = "@somospraticacontabil";
 const instagramHref = "https://instagram.com/somospraticacontabil";
+const contactEmail = "contabil@praticaemnegocios.com";
 const companyName = "Prática Assessoria em Negócios";
 
+// Descrições curtas de cada serviço (rascunho para revisão do cliente).
 const services = [
-	"Contabilidade Operacional",
-	"Contabilidade Gerencial",
-	"Contabilidade Consultiva e Personalizada",
-	"BPO Financeiro",
-	"Controle Societário",
-	"Visita Técnica",
-	"Contabilidade Eleitoral e Partidária",
-	"Treinamentos e Palestras Empresariais",
+	{
+		title: "Contabilidade Operacional",
+		desc: "A rotina contábil e fiscal da sua empresa em dia: escrituração, apuração de impostos, folha de pagamento e as obrigações acessórias entregues nos prazos.",
+	},
+	{
+		title: "Contabilidade Gerencial",
+		desc: "Relatórios e indicadores que transformam os números em informação útil, para você acompanhar o desempenho do negócio e decidir com base em dados.",
+	},
+	{
+		title: "Contabilidade Consultiva e Personalizada",
+		desc: "Acompanhamento próximo e sob medida, com orientação estratégica para cada fase da empresa. Vamos muito além da obrigação, sempre pensando no seu crescimento.",
+	},
+	{
+		title: "BPO Financeiro",
+		desc: "Terceirização da rotina financeira: contas a pagar e a receber, conciliação bancária e fluxo de caixa organizados por especialistas, liberando o seu tempo.",
+	},
+	{
+		title: "Controle Societário",
+		desc: "Cuidado com a vida societária da empresa: abertura, alterações contratuais, legalizações e regularizações junto aos órgãos competentes.",
+	},
+	{
+		title: "Visita Técnica",
+		desc: "Atendimento presencial na sua empresa para entender a operação de perto, alinhar processos e orientar dentro do seu próprio ambiente.",
+	},
+	{
+		title: "Contabilidade Eleitoral e Partidária",
+		desc: "Contabilidade especializada para candidatos, partidos e comitês, com prestação de contas dentro das regras e prazos da Justiça Eleitoral.",
+	},
+	{
+		title: "Treinamentos e Palestras Empresariais",
+		desc: "Capacitações e palestras para equipes e gestores, levando conhecimento contábil, financeiro e de gestão de forma prática e aplicável ao dia a dia.",
+	},
 ];
 
 // Destaques derivados do texto real do cliente (consultoria, contabilidade, finanças)
@@ -81,11 +107,13 @@ const highlights = [
 					<div class="hero-copy">
 						<span class="eyebrow reveal">Assessoria Empresarial • Contábil e Financeira</span>
 						<h1 class="reveal" style="transition-delay: 80ms">
-							Um serviço personalizado para o crescimento da sua empresa
+							Um serviço personalizado para o <span class="typed" id="hero-typed">crescimento da sua empresa.</span><span class="type-cursor" id="hero-caret" aria-hidden="true"></span>
 						</h1>
 						<p class="hero-lead reveal" style="transition-delay: 160ms">
-							A Prática cuida da contabilidade, da consultoria e das finanças do seu
-							negócio para que você tome decisões mais assertivas e cresça com segurança.
+							Desde 2018, a Prática é a parceira contábil, consultiva e financeira de
+							empresas de diversos segmentos. Com um atendimento próximo e
+							personalizado, cuidamos do seu negócio para que você tome decisões mais
+							assertivas e cresça com segurança.
 						</p>
 						<div class="hero-actions reveal" style="transition-delay: 240ms">
 							<a class="btn btn-primary btn-large" href={whatsappHref} target="_blank" rel="noopener noreferrer">
@@ -95,11 +123,13 @@ const highlights = [
 					</div>
 					<div class="hero-media reveal" style="transition-delay: 200ms">
 						<div class="hero-frame">
-							<img src="/primeira-secao.jpg" alt="Escritório da Prática Assessoria em Negócios" />
+							<img src="/primeira-secao2-clean.png" alt="Escritório da Prática Assessoria em Negócios" />
 						</div>
 					</div>
 				</div>
 			</section>
+
+			<div class="section-divider container" aria-hidden="true"></div>
 
 			<section class="sobre" id="quem-somos">
 				<div class="container sobre-grid">
@@ -147,9 +177,20 @@ const highlights = [
 					</div>
 					<div class="servicos-grid">
 						{services.map((service, i) => (
-							<div class="servico-card reveal" style={`transition-delay: ${i * 60}ms`}>
-								<p>{service}</p>
-							</div>
+							<button type="button" class="servico-card reveal" aria-expanded="false" style={`transition-delay: ${i * 60}ms`}>
+								<span class="servico-head">
+									<span class="servico-bar" aria-hidden="true"></span>
+									<span class="servico-title">{service.title}</span>
+									<svg class="servico-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+										<path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</span>
+								<span class="servico-desc">
+									<span class="servico-desc-inner">
+										<span class="servico-desc-text">{service.desc}</span>
+									</span>
+								</span>
+							</button>
 						))}
 					</div>
 				</div>
@@ -182,7 +223,7 @@ const highlights = [
 				<div class="container cta-final-inner">
 					<h2 class="reveal">Pronto para dar o próximo passo na sua empresa?</h2>
 					<p class="reveal" style="transition-delay: 80ms">
-						Fale com a nossa equipe pelo WhatsApp e receba um atendimento personalizado.
+						Converse com a nossa equipe e receba um orçamento sem compromisso.
 					</p>
 					<a class="btn btn-large cta-btn reveal" style="transition-delay: 160ms" href={whatsappHref} target="_blank" rel="noopener noreferrer">
 						Falar no WhatsApp
@@ -207,7 +248,12 @@ const highlights = [
 							<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069M12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0m0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324M12 16a4 4 0 110-8 4 4 0 010 8m6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881"/>
 						</svg>
 					</a>
-					<!-- TODO: adicionar endereço quando o cliente enviar -->
+					<a class="social-icon" href={`mailto:${contactEmail}`} aria-label={`E-mail ${contactEmail}`}>
+						<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+							<path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+						</svg>
+					</a>
 				</div>
 			</div>
 			<div class="container">
@@ -258,6 +304,39 @@ const highlights = [
 					}
 					window.scrollTo({ top: Math.max(0, dest), behavior: "smooth" });
 					history.replaceState(null, "", id);
+				});
+			});
+
+			// Efeito de digitação no trecho destacado do título do hero.
+			const typedEl = document.getElementById("hero-typed");
+			const caretEl = document.getElementById("hero-caret");
+			if (typedEl) {
+				const fullText = typedEl.textContent || "";
+				const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+				if (prefersReduced) {
+					typedEl.textContent = fullText;
+				} else {
+					typedEl.textContent = "";
+					let i = 0;
+					const type = () => {
+						typedEl.textContent = fullText.slice(0, i + 1);
+						i++;
+						if (i < fullText.length) {
+							setTimeout(type, 95);
+						} else if (caretEl) {
+							setTimeout(() => caretEl.classList.add("is-done"), 1200);
+						}
+					};
+					setTimeout(type, 550);
+				}
+			}
+
+			// Cards de serviço: clicar expande/recolhe a descrição.
+			const serviceCards = document.querySelectorAll(".servico-card");
+			serviceCards.forEach((card) => {
+				card.addEventListener("click", () => {
+					const isOpen = card.getAttribute("aria-expanded") === "true";
+					card.setAttribute("aria-expanded", isOpen ? "false" : "true");
 				});
 			});
 
@@ -563,6 +642,37 @@ const highlights = [
 		margin-bottom: 1.25rem;
 	}
 
+	.typed {
+		color: var(--color-accent);
+	}
+
+	.type-cursor {
+		display: inline-block;
+		width: 3px;
+		height: 0.95em;
+		margin-left: 3px;
+		border-radius: 2px;
+		background: var(--color-accent);
+		vertical-align: -0.08em;
+		animation: caret-blink 1s steps(1, end) infinite;
+	}
+
+	.type-cursor.is-done {
+		display: none;
+	}
+
+	@keyframes caret-blink {
+		50% {
+			opacity: 0;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.type-cursor {
+			display: none;
+		}
+	}
+
 	.hero-lead {
 		font-size: 1.12rem;
 		color: var(--color-text-muted);
@@ -603,6 +713,19 @@ const highlights = [
 		display: block;
 	}
 
+	/* Divisor entre seções */
+	.section-divider {
+		height: 1px;
+		border: 0;
+		background: linear-gradient(
+			90deg,
+			transparent,
+			rgba(47, 166, 149, 0.35) 20%,
+			rgba(34, 95, 113, 0.35) 80%,
+			transparent
+		);
+	}
+
 	/* Quem somos */
 	.sobre {
 		padding: 6rem 0;
@@ -616,6 +739,7 @@ const highlights = [
 	}
 
 	.sobre-frame {
+		position: relative;
 		border-radius: var(--radius);
 		overflow: hidden;
 		box-shadow: var(--shadow-md);
@@ -628,6 +752,24 @@ const highlights = [
 		object-fit: cover;
 		object-position: center;
 		display: block;
+	}
+
+	.sobre-frame::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(
+			160deg,
+			rgba(34, 95, 113, 0) 45%,
+			rgba(34, 95, 113, 0.45) 100%
+		);
+		opacity: 0;
+		transition: opacity 0.4s ease;
+		pointer-events: none;
+	}
+
+	.sobre-frame:hover::after {
+		opacity: 1;
 	}
 
 	.sobre h2 {
@@ -707,30 +849,59 @@ const highlights = [
 	.servicos-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		align-items: start;
 		gap: 1.25rem;
 	}
 
 	.servico-card {
+		width: 100%;
+		text-align: left;
+		font-family: inherit;
 		background: #fff;
 		border: 1px solid var(--color-border);
 		border-radius: var(--radius-sm);
-		padding: 2rem 1.6rem;
-		min-height: 150px;
+		padding: 1.75rem 1.6rem;
+		min-height: 140px;
 		display: flex;
-		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		cursor: pointer;
 		box-shadow: var(--shadow-sm);
 		transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 	}
 
-	.servico-card::before {
-		content: "";
+	.servico-head {
+		display: flex;
+		align-items: center;
+		gap: 1.1rem;
+	}
+
+	.servico-bar {
 		flex-shrink: 0;
 		width: 4px;
-		height: 2.6rem;
+		align-self: stretch;
+		min-height: 2.4rem;
 		border-radius: 999px;
 		background: var(--color-gradient);
-		margin-right: 1.1rem;
-		transition: height 0.25s ease;
+		transition: min-height 0.25s ease;
+	}
+
+	.servico-title {
+		flex: 1;
+		font-family: var(--font-display);
+		font-weight: 700;
+		font-size: 1.3rem;
+		color: var(--color-ink);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
+	}
+
+	.servico-chevron {
+		flex-shrink: 0;
+		width: 20px;
+		height: 20px;
+		color: var(--color-accent);
+		transition: transform 0.3s ease;
 	}
 
 	.servico-card:hover {
@@ -739,18 +910,48 @@ const highlights = [
 		border-color: rgba(47, 166, 149, 0.4);
 	}
 
-	.servico-card:hover::before {
-		height: 3.4rem;
+	.servico-card:hover .servico-bar {
+		min-height: 3rem;
 	}
 
-	.servico-card p {
-		margin: 0;
-		font-family: var(--font-display);
-		font-weight: 700;
-		font-size: 1.3rem;
-		color: var(--color-ink);
-		line-height: 1.3;
-		letter-spacing: -0.01em;
+	.servico-card[aria-expanded="true"] {
+		border-color: rgba(47, 166, 149, 0.4);
+	}
+
+	.servico-card[aria-expanded="true"] .servico-chevron {
+		transform: rotate(180deg);
+	}
+
+	.servico-desc {
+		display: grid;
+		grid-template-rows: 0fr;
+		transition: grid-template-rows 0.35s ease;
+	}
+
+	.servico-card[aria-expanded="true"] .servico-desc {
+		grid-template-rows: 1fr;
+	}
+
+	.servico-desc-inner {
+		overflow: hidden;
+		min-height: 0;
+	}
+
+	.servico-desc-text {
+		display: block;
+		padding-left: calc(4px + 1.1rem);
+		padding-top: 0.9rem;
+		color: var(--color-text-muted);
+		font-size: 0.95rem;
+		line-height: 1.55;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.servico-desc,
+		.servico-chevron,
+		.servico-bar {
+			transition: none;
+		}
 	}
 
 	/* CTA final */
@@ -775,7 +976,7 @@ const highlights = [
 	.cta-final-inner p {
 		color: rgba(255, 255, 255, 0.9);
 		margin: 0 auto 2rem;
-		max-width: 34rem;
+		max-width: 42rem;
 		font-size: 1.05rem;
 	}
 
